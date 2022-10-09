@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
 
-interface CardProps {
+export interface CardProps {
+  id: number;
   title: string;
   description: string;
   list?: string[];
@@ -13,10 +14,13 @@ const props = defineProps<CardProps>();
 <template>
   <div class="card">
     <div class="card__image">
-      <img :src="props.image" alt="" />
+      <img v-for="image in props.images" :src="image" />
     </div>
     <div class="card__content">
       <h3 class="card__title">{{ props.title }}</h3>
+      <ul v-if="props.list">
+        <li v-for="item in props.list" :key="item">{{ item }}</li>
+      </ul>
       <p class="card__description">{{ props.description }}</p>
     </div>
   </div>
@@ -25,15 +29,14 @@ const props = defineProps<CardProps>();
 @import "./../scss/variables.scss";
 .card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 100%;
   background: $color_white;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
   margin: 1rem;
   transition: all 0.3s ease-in-out;
   &:hover {
@@ -52,10 +55,6 @@ const props = defineProps<CardProps>();
   &__content {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     padding: 1rem;
     &__title {
       font-size: 1.5rem;
