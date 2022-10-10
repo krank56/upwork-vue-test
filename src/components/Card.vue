@@ -51,18 +51,24 @@ const props = defineProps<CardProps>();
     align-items: center;
     gap: 2px;
     flex: 0 0 183px;
-
+    @media (max-width: 768px) {
+      flex: 0 0 30%;
+    }
     img {
       flex: auto;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
     }
   }
   &__content {
     width: 100%;
     height: 100%;
     padding: 40px 30px;
+    @media (max-width: 768px) {
+      padding: 25px 20px;
+    }
     flex: auto;
   }
   &__title {
