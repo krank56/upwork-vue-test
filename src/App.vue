@@ -77,7 +77,7 @@ const cards: Cards = [
       />
     </div>
 
-    <ButtonPrimary :href="'#'" :label="'GET STARTED'" />
+    <ButtonPrimary :href="'#'" :label="'Get started'" />
   </div>
 </template>
 
@@ -160,10 +160,11 @@ ul {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(437.5px, 1fr));
-  grid-gap: 30px;
+  grid-column-gap: 30px;
+  grid-row-gap: 40px;
   @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   }
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 </style>

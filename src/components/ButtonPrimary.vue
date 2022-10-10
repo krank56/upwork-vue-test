@@ -24,9 +24,13 @@ a {
   height: 60px;
   background: $color_dark_blue;
   border-radius: 12px;
+  margin: auto;
   span {
     color: $color_white;
+    font-size: 17px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
   }
-  margin: auto;
 }
 </style>

@@ -36,12 +36,7 @@ const props = defineProps<CardProps>();
   height: 100%;
   background: $color_white;
   border-radius: 8px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    transform: translateY(-5px);
-  }
   &__image {
     width: 100%;
     height: 100%;
