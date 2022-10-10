@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import Card from "./components/Card.vue";
+import ButtonPrimary from "./components/ButtonPrimary.vue";
 import type { CardProps } from "./components/Card.vue";
+import type { ButtonPrimaryProps } from "./components/ButtonPrimary.vue";
 
 interface Cards extends Array<CardProps> {}
 
@@ -74,6 +76,8 @@ const cards: Cards = [
         :images="card.images"
       />
     </div>
+
+    <ButtonPrimary :href="'#'" :label="'GET STARTED'" />
   </div>
 </template>
 
@@ -87,8 +91,13 @@ const cards: Cards = [
   box-sizing: border-box;
 }
 
+//reset link styling
+a {
+  text-decoration: none;
+}
+
 body {
-  font-family: $font-family;
+  font-family: $font-family-poppins;
   color: $color_charcoal;
   background: $color_background;
 }
@@ -100,7 +109,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-family;
+  font-family: $font-family-poppins;
   font-weight: 700;
   color: $color_dark_blue;
 }
@@ -109,27 +118,33 @@ h6 {
   max-width: 730px;
   margin: auto;
   text-align: center;
-  font-size: 3.5rem;
+  font-size: 56px;
   line-height: 1;
-  margin-bottom: 1rem;
+  margin-bottom: 80px;
 }
 
 p {
-  font-family: $font-family;
+  font-family: $font-family-nunito;
   font-weight: 600;
   color: $color_charcoal;
+  font-size: 15px;
+  line-height: 24px;
 }
 
 ul {
   list-style: none;
-}
-
-ul li::before {
-  color: $color_tan;
-  content: "\2022";
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+  li::before {
+    color: $color_tan;
+    content: "\2022";
+    display: inline-block;
+    width: 1em;
+  }
+  li {
+    font-family: $font-family-nunito;
+    font-size: 15px;
+    line-height: 26px;
+    font-weight: 700;
+  }
 }
 
 .emph {
@@ -137,14 +152,16 @@ ul li::before {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 6rem auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(437.5px, 1fr));
+
+  grid-gap: 30px;
+  margin-bottom: 50px;
 }
 </style>

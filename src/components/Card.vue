@@ -18,7 +18,7 @@ const props = defineProps<CardProps>();
     </div>
     <div class="card__content">
       <h3 class="card__title">{{ props.title }}</h3>
-      <ul v-if="props.list">
+      <ul class="card__list" v-if="props.list">
         <li v-for="item in props.list" :key="item">{{ item }}</li>
       </ul>
       <p class="card__description">{{ props.description }}</p>
@@ -37,7 +37,7 @@ const props = defineProps<CardProps>();
   background: $color_white;
   border-radius: 8px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-  margin: 1rem;
+  overflow: hidden;
   transition: all 0.3s ease-in-out;
   &:hover {
     transform: translateY(-5px);
@@ -45,26 +45,34 @@ const props = defineProps<CardProps>();
   &__image {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    flex: 0 0 183px;
+
     img {
+      flex: auto;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 10px;
     }
   }
   &__content {
     width: 100%;
     height: 100%;
-    padding: 1rem;
-    &__title {
-      font-size: 1.5rem;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    &__description {
-      font-size: 1rem;
-      text-align: center;
-    }
+    padding: 40px 30px;
+    flex: auto;
+  }
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 12px;
+    color: $color_charcoal;
+  }
+  &__list {
+    margin-bottom: 12px;
   }
 }
 </style>

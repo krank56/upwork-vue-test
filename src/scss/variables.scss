@@ -1,6 +1,8 @@
 // font-familly
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap");
-$font-family: "Poppins", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&display=swap");
+$font-family-poppins: "Poppins", sans-serif;
+$font-family-nunito: "Nunito sans", sans-serif;
 
 //colors
 $color_blue: #506bca;
